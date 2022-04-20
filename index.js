@@ -6,33 +6,43 @@ const fs = require("fs")
 const questions = [
     {
         type: "input",
+        name: "title",
+        message: "1/8 - title:"
+    },
+    {
+        type: "input",
         name: "description",
-        message: "1/6 - description:"
+        message: "2/8 - description:"
     },
     {
         type: "input",
         name: "installation",
-        message: "2/6 - installation:"
+        message: "3/8 - installation:"
     },
     {
         type: "input",
         name: "usage",
-        message: "3/6 - usage:"
+        message: "4/8 - usage:"
     },
     {
         type: "input",
         name: "contributing",
-        message: "4/6 - contributing:"
+        message: "5/8 - contributing:"
     },
     {
         type: "input",
         name: "tests",
-        message: "5/6 - tests:"
+        message: "6/8 - tests:"
     },
     {
         type: "select",
         name: "licence",
-        message: "6/6 - licence:"
+        message: "7/8 - licence:"
+    },
+    {
+        type: "input",
+        name: "githubUsername",
+        message: "8/8 - gtihub username:"
     }
 ];
 
