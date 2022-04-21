@@ -51,60 +51,64 @@ function renderLicenseLink(license) {
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  console.log(license)
   if (!license) {
     return ""
   }
 
-  return `
-  <a name="License"/>
-  ## License
-  
-  ${renderLicenseLink(data.license)}
-  `
+  return `<a name="License"></a>
+## License
+
+This apilcation is covered under the [${license}](${renderLicenseLink(license)}) license.
+`
 }
 
 //generate markdown for README
 function generateMarkdown(data) {
-  return `${renderLicenseBadge(data.license)}
-  # ${data.title}
+return `${renderLicenseBadge(data.license)}
+# ${data.title}
 
-  ${data.description}
+## Description
 
-  ##Table of Contents
+${data.description}
 
-  [Installation](#Installation)  
-  [Usage](#Usage) 
-  [Contributing](#Contributing) 
-  [Usage](#Usage) 
-  [Questions](#Questions)
-  [License](#License) 
+## Table of Contents
 
-  <a name="Installation"/>
-  ##Installation
+[Installation](#Installation)  
+[Usage](#Usage)  
+[Contributing](#Contributing)  
+[Usage](#Usage)  
+[Questions](#Questions)  
+[License](#License)  
 
-  \`\`\`bash
-  ${data.installation}
-  \`\`\`
+<a name="Installation"></a>
+## Installation
 
-  <a name="Usage"/>
-  ## Usage
+\`\`\`bash
+${data.installation}
+\`\`\`
 
-  \`\`\`javascript
-  ${data.usage}
-  \`\`\`
+<a name="Usage"></a>
+## Usage
 
-  <a name="Contributing"/>
-  ## Contributing
+\`\`\`javascript
+${data.usage}
+\`\`\`
 
-  ${data.contribution}
+<a name="Contributing"></a>
+## Contributing
 
-  <a name="Questions"/>
-  ## Questions
+${data.contributing}
 
-  Have any questions? You cann reach me through my Github here: [${data.githubUsername}](https://www.github.com/${data.githubUsername})
+<a name="Questions"></a>
+## Questions
 
-  ${renderLicenseSection(data.license)}
-  `;
+Have any questions?  
+- You can reach me through my Github here: [${data.githubUsername}](https://www.github.com/${data.githubUsername})
+- Or email me: [${data.email}](https://www.github.com/${data.email})
+
+${renderLicenseSection(data.license)}
+`;
 }
 
 // export module
