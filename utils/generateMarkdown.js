@@ -1,6 +1,10 @@
 
-//
+// return a colour associated eit the parsed license
+// If there is no license, return an empty string
 function getLicenseColour(license) {
+  if (!license) {
+    return ""
+  }
   switch(license){
     case "MIT":
       return "yellow"
@@ -12,15 +16,13 @@ function getLicenseColour(license) {
       return "olive"
     case "BSD_3--Clause":
       return "orange"
-    default:
-      return ""
   }
 }
 
 // returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  if (license === "" || license === undefined) {
+  if (!license) {
     return ""
   }
   return badgeString = `[![License: ${license}](https://img.shields.io/badge/License-${license}-${getLicenseColour(license)}.svg)](${renderLicenseLink(license)})`
@@ -29,6 +31,9 @@ function renderLicenseBadge(license) {
 // returns the license link for given license
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
+  if (!license) {
+    return ""
+  }
   switch(license){
     case "MIT":
       return "https://opensource.org/licenses/MIT"
@@ -40,15 +45,22 @@ function renderLicenseLink(license) {
       return "https://opensource.org/licenses/Apache-2.0"
     case "BSD_3--Clause":
       return "https://opensource.org/licenses/BSD-3-Clause"
-      default:
-        return ""
   }
 }
 
 // TODO: Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
+  if (!license) {
+    return ""
+  }
 
+  return `
+  <a name="License"/>
+  ## License
+  
+  ${renderLicenseLink(data.license)}
+  `
 }
 
 //generate markdown for README
@@ -91,10 +103,7 @@ function generateMarkdown(data) {
 
   Have any questions? You cann reach me through my Github here: [${data.githubUsername}](https://www.github.com/${data.githubUsername})
 
-  <a name="License"/>
-  ## License
-
-  ${renderLicenseLink(data.license)}
+  ${renderLicenseSection(data.license)}
   `;
 }
 
