@@ -37,7 +37,8 @@ const questions = [
     {
         type: "select",
         name: "licence",
-        message: "7/8 - licence:"
+        message: "7/8 - licence:",
+        choices: ["MIT", "GPLv2", "GPLv3", "Apache_2.0", "BSD_3--Clause"]
     },
     {
         type: "input",
@@ -49,15 +50,15 @@ const questions = [
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
-            err ? console.error(err) : console.log("complete!")
+            err ? console.error(err) : console.log(`'${fileName}' has been generated!`)
         }
     )
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    //prompt user
-    inquirer.prompt(questions).then(writeToFile("README.md"))
+    inquirer.prompt(questions)
+        .then(writeToFile("README.md"))
 }
 
 // Function call to initialize app
