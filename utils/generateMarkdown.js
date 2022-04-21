@@ -3,7 +3,7 @@
 // If there is no license, return an empty string
 function getLicenseColour(license) {
   if (!license) {
-    return ""
+    return "" // if license is undefined
   }
   switch(license){
     case "MIT":
@@ -19,16 +19,16 @@ function getLicenseColour(license) {
   }
 }
 
-// returns a license badge based on which license is passed in
+// return a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
   if (!license) {
-    return ""
+    return "" // if license is undefined
   }
   return badgeString = `[![License: ${license}](https://img.shields.io/badge/License-${license}-${getLicenseColour(license)}.svg)](${renderLicenseLink(license)})`
 }
 
-// returns the license link for given license
+// return the license link for given license
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (!license) {
@@ -48,11 +48,11 @@ function renderLicenseLink(license) {
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// return the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (!license) {
-    return ""
+    return "" // if license is undefined
   }
 
   return `<a name="License"></a>
