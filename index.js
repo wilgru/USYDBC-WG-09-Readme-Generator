@@ -1,8 +1,8 @@
 const inquirer = require("inquirer")
-const generateMarkdown = require("./utils/generateMarkdown")
+const generateMarkdown = require("./utils/generateMarkdown") // helper functions
 const fs = require("fs")
 
-// TODO: Create an array of questions for user input
+// array of questions for user input
 let questions = [
     {
         type: "input",
@@ -57,7 +57,7 @@ let questions = [
     }
 ];
 
-// TODO: Create a function to write README file
+// function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, generateMarkdown(data), (err) => {
             err ? console.error(err) : console.log(`'${fileName}' has been generated!`)
@@ -65,18 +65,14 @@ function writeToFile(fileName, data) {
     )
 }
 
-// TODO: Create a function to initialize app
+// function to initialize app
 function init() {
     console.log("Lets generate a readme file! All you got to do is answer the following questions:")
     inquirer
-    .prompt(questions)
-    .then(data => writeToFile("README.md", data))
+    .prompt(questions) // prompt all the questions
+    .then(data => writeToFile("README.md", data)) // then with the results, write them to a new readme file
     .catch((error) => {
-        if (error.isTtyError) {
-            console.log("Err 1", error)
-        } else {
-            console.log("Err 2", error)
-        }
+        console.error(error) // if there was ann error console log it
         });
 }
 
