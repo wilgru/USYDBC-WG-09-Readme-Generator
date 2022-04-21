@@ -3,47 +3,57 @@ const generateMarkdown = require("./utils/generateMarkdown")
 const fs = require("fs")
 
 // TODO: Create an array of questions for user input
-const questions = [
+let questions = [
     {
         type: "input",
         name: "title",
-        message: "1/8 - title:"
+        message: "1/10 - Project's title: "
     },
     {
         type: "input",
         name: "description",
-        message: "2/8 - description:"
+        message: "2/10 - Description: "
+    },
+    {
+        type: "input",
+        name: "language",
+        message: "3/10 - Project's language: "
     },
     {
         type: "input",
         name: "installation",
-        message: "3/8 - installation:"
+        message: "4/10 - Installation: "
     },
     {
         type: "input",
         name: "usage",
-        message: "4/8 - usage:"
+        message: "5/10 - Usage: "
     },
     {
         type: "input",
         name: "contributing",
-        message: "5/8 - contributing:"
+        message: "6/10 - Contributing: "
     },
     {
         type: "input",
         name: "tests",
-        message: "6/8 - tests:"
+        message: "7/10 - Tests: "
     },
     {
-        type: "select",
-        name: "licence",
-        message: "7/8 - licence:",
+        type: "list",
+        name: "license",
+        message: "8/10 - Licence: ",
         choices: ["MIT", "GPLv2", "GPLv3", "Apache_2.0", "BSD_3--Clause"]
     },
     {
         type: "input",
         name: "githubUsername",
-        message: "8/8 - gtihub username:"
+        message: "9/10 - Your Github username: "
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "10/10 - Your email: "
     }
 ];
 
@@ -57,8 +67,17 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.prompt(questions)
-        .then(writeToFile("README.md"))
+    console.log("Lets generate a readme file! All you got to do is answer the following questions:")
+    inquirer
+    .prompt(questions)
+    .then(data => writeToFile("README.md", data))
+    .catch((error) => {
+        if (error.isTtyError) {
+            console.log("Err 1", error)
+        } else {
+            console.log("Err 2", error)
+        }
+        });
 }
 
 // Function call to initialize app
