@@ -4,7 +4,7 @@ This is a NodeJS application that generates a high quality and professional READ
 
 ## Installation
 
-Install usinng git clone:
+Install using git clone:
 
 ``` bash
 git clone git@github.com:wilgru/USYDBC-WG-09-Readme-Generator.git
