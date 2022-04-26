@@ -1,5 +1,7 @@
 # WG Readme Generator
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This is a NodeJS application that generates a high quality and professional README.md file. The program will prompt the user for information to populate the readme file with (eg. title, description, usage, etc) and will save the file in the same directory as the program. 
 
 ## Installation
