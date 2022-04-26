@@ -67,7 +67,7 @@ function writeToFile(fileName, data) {
 
 // function to initialize app
 function init() {
-    console.log("Lets generate a readme file! All you got to do is answer the following questions:")
+    console.log("To generate your READEME.md file, answer the following questions:")
     inquirer
     .prompt(questions) // prompt all the questions
     .then(data => writeToFile("README.md", data)) // then with the results, write them to a new readme file

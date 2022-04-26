@@ -102,9 +102,9 @@ ${data.contributing}
 <a name="Questions"></a>
 ## Questions
 
-Have any questions?  
-- You can reach me through my Github here: [${data.githubUsername}](https://www.github.com/${data.githubUsername})
-- Or email me: [${data.email}](https://www.github.com/${data.email})
+Have any questions? Feel free to contact me!
+- Github here: [${data.githubUsername}](https://www.github.com/${data.githubUsername})
+- email: [${data.email}](mailto:${data.email})
 
 ${renderLicenseSection(data.license)}
 `;
