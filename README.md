@@ -20,11 +20,9 @@ node index.js
 
 From there you will be prompted will a series of numbered questions, where the next will appear after the current one has been answered. Enter a response for each question and once all the questions have been answered, a README.md file will be created in the same directory as the index.js file.
 
-## Demo
+## Demonstration
 
 ![usage demo](https://github.com/wilgru/USYDBC-WG-09-Readme-Generator/blob/main/samples/demo_img.png)
-
-## Demonstration
 
 Watch a short demo of how to use the program [here](https://drive.google.com/file/d/1YrItE9_GkLq2-jaVYBNR4dp72e4qFJEA/view?usp=sharing)
 
