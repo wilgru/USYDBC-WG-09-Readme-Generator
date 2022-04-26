@@ -38,7 +38,7 @@ The main purpose of this repository is to continue evolving React core, making i
 
 Have any questions?  
 - You can reach me through my Github here: [wilgru](https://www.github.com/wilgru)
-- Or email me: [wilgru@gmail.com](https://www.github.com/wilgru@gmail.com)
+- Or email me: [wilgru@gmail.com](mailto:wilgru@gmail.com)
 
 <a name="License"></a>
 ## License
